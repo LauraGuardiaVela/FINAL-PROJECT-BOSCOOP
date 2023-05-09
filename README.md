@@ -12,4 +12,6 @@ Respecte als assets de cada prova, es troben a sobre de la roca corresponent. Hi
 - Formes
 - Magranes i llavors
 
+A més, hem afegit a l'escena les diferents músiques d'ambient i hem deixat en una carpeta *"Musica"* la resta de sons que farem servir per a les interaccions.
+
 * Cada asset que hem agafat l'hem modificat per adaptar-lo a les nostres necessitats. *
