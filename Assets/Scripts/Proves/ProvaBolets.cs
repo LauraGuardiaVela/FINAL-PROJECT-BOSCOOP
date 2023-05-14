@@ -11,23 +11,20 @@ public class ProvaBolets : MonoBehaviour
     void Start()
     {
         StartCoroutine(ferSequencia());
-        
-        
+
     }
 
     IEnumerator ferSequencia(){
+
         for(int i = 0; i < 4; i++){
-            
-            
             var boletActual = llistaBolets[i];
             var colorOriginal = boletActual.GetComponent<Renderer>().material.color;
             var colorNou = Color.white;
             boletActual.GetComponent<Renderer>().material.color = colorNou;
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
             boletActual.GetComponent<Renderer>().material.color = colorOriginal;
 
-            
         }
     }
 
