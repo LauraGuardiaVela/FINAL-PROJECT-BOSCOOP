@@ -7,8 +7,6 @@ TagManager:
   - BlendPlane0
   - BlendPlane1
   - Bolet
-  - TriggerAigua
-  - Aigua
   layers:
   - Default
   - TransparentFX

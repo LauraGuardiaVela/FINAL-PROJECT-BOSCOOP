@@ -14,16 +14,7 @@ public class gestionadorJoc : MonoBehaviour
     public List<GameObject> camins = new List<GameObject>(); 
 
     //Proves
-    public List<GameObject> roquesProves = new List<GameObject>();
-
-    // Triggers
-    public List<GameObject> triggersAigua = new List<GameObject>();
-
-    // Aigua
-    public GameObject aigua;
-
-    // Illa
-    public GameObject illa;
+    public List<GameObject> roquesProves = new List<GameObject>(); 
 
     // Start is called before the first frame update
     void Start()
@@ -41,65 +32,47 @@ public class gestionadorJoc : MonoBehaviour
     {
         obrintCamins();
         StartCoroutine(elevantRoques());
-        nivellAigua();
     }
     void obrintCamins()
     {
         if(provaLlums.LlumsisWin == true)
         {
-            camins[2].SetActive(true); // camí 3
-            triggersAigua[7].SetActive(false); // trigger camí 3
+            camins[2].SetActive(true);
         }
         if(provaFlors.FlorsisWin == true)
         {
-            camins[3].SetActive(true); // camí 4
-            triggersAigua[8].SetActive(false); // trigger camí 4
+            camins[3].SetActive(true);
         }
         if(provaBolets.boletsIsWin == true)
         {
-            camins[0].SetActive(true); // camí 1
-            triggersAigua[5].SetActive(false); // trigger camí 1
+            
+            camins[0].SetActive(true);
         }
         if(provaVolcans.volcansIsWin == true)
         {
-            camins[1].SetActive(true); // camí 2
-            triggersAigua[6].SetActive(false); // trigger camí 2
+            camins[1].SetActive(true);
         }
         if(provaConjunta.ConjuntaisWin == true)
         {
-            camins[4].SetActive(true); // camí 5
-            triggersAigua[9].SetActive(false); // trigger camí 5
+            camins[4].SetActive(true);
         }   
     }
     IEnumerator elevantRoques()
     {
-        if(camins[0].activeInHierarchy) // supera prova bolets -> camí 1 s'obre
+        if(camins[0].activeInHierarchy)
         {
             yield return new WaitForSeconds(5);
-            roquesProves[1].SetActive(true); // roca flors
-            triggersAigua[3].SetActive(false); // trigger prova flors
+            roquesProves[1].SetActive(true);
         }
-        if(camins[2].activeInHierarchy) // supera prova llums -> camí 3 s'obre
+        if(camins[2].activeInHierarchy)
         {
             yield return new WaitForSeconds(5);
-            roquesProves[3].SetActive(true); // roca volcans
-            triggersAigua[2].SetActive(false); // trigger prova volcans
+            roquesProves[3].SetActive(true);
         }
         if(camins[1].activeInHierarchy && camins[3].activeInHierarchy)
         {
             yield return new WaitForSeconds(5);
-            roquesProves[4].SetActive(true); // roca conjunta
-            triggersAigua[4].SetActive(false); // trigger prova conjunta
-
-        }
-    }
-
-    void nivellAigua()
-    {
-        if (aigua.transform.position.y >= 5.0f)
-        {
-            illa.transform.position = new Vector3(0, -15, 0);
+            roquesProves[4].SetActive(true);
         }
     }
 }
-
