@@ -18,16 +18,18 @@ A més, hem afegit a l'escena les diferents músiques d'ambient i hem deixat en 
 * Cada asset que hem agafat l'hem modificat per adaptar-lo a les nostres necessitats. *
 
 ### Entrega 2 - Initial project structure
-En aquesta versió hem començat a implementar les proves, afegir funcionalitats entre elles i reactivitat al joc. Hem creat fitxers per cadascuna de les proves:
-- ProvaBolets: manté constancia dels bolets de la escena, genera i mostra la seqüència a realitzar i evalua si la prova s'ha superat.
-- ProvaFlors: manté constancia de les flors de la escena, genera una seqüència i itera la llista per anar mostrant-les i evalua si la prova s'ha superat.
-- ProvaVolcans: manté constancia dels volcans de la escena, genera una seqüència itera la llista per anar amagant-los i evalua si la prova s'ha superat.
+En aquesta versió, hem començat a implementar les proves, afegir funcionalitats entre elles i reactivitat al joc. Hem creat fitxers per cadascuna de les proves:
+- ProvaBolets: manté constància dels bolets de l'escena, genera i mostra la seqüència a realitzar i avalua si la prova s'ha superat.
+- ProvaFlors: manté constància de les flors de l'escena, genera una seqüència i itera la llista per anar mostrant-les i avalua si la prova s'ha superat.
+- ProvaVolcans: manté constància dels volcans de l'escena, genera una seqüència i itera la llista per anar amagant-los i avalua si la prova s'ha superat.
 - ProvaConjunta: TODO
 - ProvaLlums: TODO
 
 Afegit behaviour a cadascun dels prefabs que participen de les proves:
 - Bolet: s'il·lumina en saltar a sobre + comprova si era el següent bolet en la seqüència a realitzar.
-- Flor: creix i reprodueix un so si el player la ha "il·luminat" (el tracker passa per sobre) + comprova si era la flor que s'havia de sanar.
-- Volca: es redueix fins desapareixer i reprodueix un so si el player trepitja a sobre + comprova si era el volcà correcte de la seqüència.
+- Flor: creix i reprodueix un so si el player l'ha "il·luminat" (el tracker passa per sobre) + comprova si era la flor que s'havia de sanar.
+- Volca: es redueix fins a desaparèixer i reprodueix un so si el player trepitja a sobre + comprova si era el volcà correcte de la seqüència.
 
-I un GameManager (gestionadorJoc) què té consciencia de quines proves s'han realitzat amb èxit i quines no, per tal d'obrir els camins i roques corresponents.
+I un GameManager (gestionadorJoc) què té consciència de quines proves s'han realitzat amb èxit i quines no, per tal d'obrir els camins i roques corresponents.
+
+Al lab vam provar els nostres canvis sense èxit, ja que tot i que l'escena es veia bé i els sons es reproduïen correctament, el sistema de tracking no funcionava i els nostres players no es podien moure per l'escena. Tot i que en un entorn d'escriptori, funciona amb les comandes per teclat. De cara al següent lab, realitzarem un conjunt de proves/test per tal de trobar l'error i poder continuar avançant.
