@@ -25,6 +25,30 @@ public class gestionadorJoc : MonoBehaviour
         provaLlums = FindObjectOfType<ProvaLlums>();        
         provaBolets = FindObjectOfType<ProvaBolets>();
 
+        //HERE YOUR CODE 
+        for(int i = 0; i < roquesProves.Count; i++)
+        {
+            if(i != 0 && i != 2){ //només volem que apareguin les 2 primeres (una de cada jugador)
+                DisableChildMeshRenderer(roquesProves[i]);
+            }
+        }
+
+    }
+    void DisableChildMeshRenderer(GameObject parent)
+    {
+        MeshRenderer[] meshRenderers = parent.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer renderer in meshRenderers)
+        {
+            renderer.enabled = false;
+        }
+    }
+    void EnableChildMeshRenderer(GameObject parent)
+    {
+        MeshRenderer[] meshRenderers = parent.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer renderer in meshRenderers)
+        {
+            renderer.enabled = true;
+        }
     }
 
     // Update is called once per frame
@@ -62,17 +86,21 @@ public class gestionadorJoc : MonoBehaviour
         if(camins[0].activeInHierarchy)
         {
             yield return new WaitForSeconds(5);
-            roquesProves[1].SetActive(true);
+            EnableChildMeshRenderer(roquesProves[1]);
+            //roquesProves[1].SetActive(true);
+            
         }
         if(camins[2].activeInHierarchy)
         {
             yield return new WaitForSeconds(5);
-            roquesProves[3].SetActive(true);
+            EnableChildMeshRenderer(roquesProves[3]);
+            //roquesProves[3].SetActive(true);
         }
         if(camins[1].activeInHierarchy && camins[3].activeInHierarchy)
         {
             yield return new WaitForSeconds(5);
-            roquesProves[4].SetActive(true);
+            EnableChildMeshRenderer(roquesProves[4]);
+            //roquesProves[4].SetActive(true);
         }
     }
 }

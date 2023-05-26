@@ -60,7 +60,6 @@ public class Volca : MonoBehaviour
         //float scale = Mathf.Lerp(startScale, targetScale, percentScaled); // 3
         float scale = 0.13f;
         volca.transform.localScale = new Vector3(scale, scale, scale);
-          
     }
 
 }

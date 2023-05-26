@@ -308,7 +308,7 @@ Material:
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
-    - _SpecularColor: {r: 0.48162156, g: 0.745283, b: 0.7242408, a: 1}
+    - _SpecularColor: {r: 0.23175506, g: 0.5283019, b: 0.5061715, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
