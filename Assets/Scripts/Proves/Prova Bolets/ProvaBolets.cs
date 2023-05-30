@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProvaBolets : MonoBehaviour
 {
+    //private gestionadorJoc gestionadorJoc;
 
     public List<GameObject> llistaBolets = new List<GameObject>(); //llista original de bolets
     public List<GameObject> sequenciaBolets = new List<GameObject>(); //seqüència de bolets 
@@ -21,6 +22,8 @@ public class ProvaBolets : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //gestionadorJoc = FindObjectOfType<gestionadorJoc>();
+
         iteradorBolets = 0;
         numeroBolets = llistaBolets.Count;
         boletsIsWin = false;

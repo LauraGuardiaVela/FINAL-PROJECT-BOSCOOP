@@ -13,7 +13,6 @@ public class ProvaVolcans : MonoBehaviour
 
     public bool volcansIsWin;
 
-
     
     // Start is called before the first frame update
     void Start()
