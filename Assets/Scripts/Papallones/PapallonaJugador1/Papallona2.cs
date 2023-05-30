@@ -64,28 +64,21 @@ public class Papallona2 : MonoBehaviour
     void StartProvaConjunta()
     {
         //magranaInicialObjectiu.transform.position;
-        gestionadorJoc.provaActualJugador1 = "Prova Llums";
-        gestionadorJoc. provaActualJugador2 = "Prova Bolets";
         i = 0;
     }
 
     void Update()
     {
-        /*Debug.Log("PROVA J1:"+gestionadorJoc.provaActualJugador1+" PROVA J2:"+gestionadorJoc.provaActualJugador2);
-        //if((gestionadorJoc.provaActualJugador2 == "Prova Conjunta") && (gestionadorJoc.provaActualJugador1 == "Prova Conjunta"))
-        if(gestionadorJoc.provaActualJugador2 == "Prova Conjunta")
+        if (gestionadorJoc.provaActualJugador2 == "Prova Bolets")
         {
-            Debug.Log("OKAY HERE I AM");
-            UpdateProvaConjunta();
-        }*/
-        if(gestionadorJoc.provaActualJugador2 == "Prova Bolets" )
-        {   
             UpdateProvaBolets();
         }
-        else if(gestionadorJoc.provaActualJugador2 == "Prova Volcans" && provaBolets.boletsIsWin == true)
+        else if (gestionadorJoc.provaActualJugador2 == "Prova Volcans" && provaBolets.boletsIsWin == true)
         {
             UpdateProvaVolcans();
-        }else{
+        }
+        else if ((gestionadorJoc.provaActualJugador2 == "Prova Conjunta") && (gestionadorJoc.provaActualJugador1 == "Prova Conjunta"))
+        {
             UpdateProvaConjunta();
         }
 
@@ -113,16 +106,19 @@ public class Papallona2 : MonoBehaviour
     {
         if(i == 0)
         {
-            targetPos = magranaInicialObjectiu.transform.position + targetPos;
-            StartCoroutine(MoveToTarget());
-            i++;
-            
-        }else{
+            targetPos = magranaInicialObjectiu.transform.position + targetPosOffset;
+            if (!isMoving)
+            {
+                StartCoroutine(MoveToTarget());
+            }
 
+            //papallona.transform.position = targetPos;
+        }else {
             float y = Mathf.PingPong(Time.time * speed, 1) * 6 - 3;
-            papallona.transform.position = new Vector3(0, 0, y);
+            //papallona.transform.position = new Vector3(0, 0, 0);
+            papallona.transform.position = new Vector3(papallona.transform.position.x, papallona.transform.position.y, papallona.transform.position.z + y);
         }
-        
+
     }
     IEnumerator MoveToTarget()
     {
@@ -140,5 +136,10 @@ public class Papallona2 : MonoBehaviour
         }
 
         isMoving = false;
+        if ((gestionadorJoc.provaActualJugador2 == "Prova Conjunta") && (gestionadorJoc.provaActualJugador1 == "Prova Conjunta"))
+        {
+            i++;
+        }
+
     }
 }

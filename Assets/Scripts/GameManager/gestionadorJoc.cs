@@ -23,8 +23,8 @@ public class gestionadorJoc : MonoBehaviour
     void Start()
     {
         // La prova dels bolets i la de les llums seran les primeres sempre 
-        //provaActualJugador1 = "Prova Llums";
-        //provaActualJugador2 = "Prova Bolets"; --> fet a papallona2
+        provaActualJugador1 = "Prova Llums";
+        provaActualJugador2 = "Prova Bolets";
 
         provaFlors = FindObjectOfType<ProvaFlors>();
         provaVolcans = FindObjectOfType<ProvaVolcans>();
@@ -74,7 +74,7 @@ public class gestionadorJoc : MonoBehaviour
         if(provaFlors.FlorsisWin == true)
         {
             camins[3].SetActive(true);
-            provaActualJugador2 = "Prova conjunta";
+            provaActualJugador2 = "Prova Conjunta";
         }
 
         if(provaBolets.boletsIsWin == true)
@@ -85,7 +85,7 @@ public class gestionadorJoc : MonoBehaviour
         if(provaVolcans.volcansIsWin == true)
         {
             camins[1].SetActive(true);
-            //provaActualJugador1 = "Prova conjunta";
+            provaActualJugador1 = "Prova Conjunta";
         }
 
         if(provaConjunta.ConjuntaisWin == true)
