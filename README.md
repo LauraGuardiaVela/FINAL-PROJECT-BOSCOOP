@@ -33,3 +33,18 @@ Afegit behaviour a cadascun dels prefabs que participen de les proves:
 I un GameManager (gestionadorJoc) què té consciència de quines proves s'han realitzat amb èxit i quines no, per tal d'obrir els camins i roques corresponents.
 
 Al lab vam provar els nostres canvis sense èxit, ja que tot i que l'escena es veia bé i els sons es reproduïen correctament, el sistema de tracking no funcionava i els nostres players no es podien moure per l'escena. Tot i que en un entorn d'escriptori, funciona amb les comandes per teclat. De cara al següent lab, realitzarem un conjunt de proves/test per tal de trobar l'error i poder continuar avançant.
+
+### Entrega 3 - Intermediate advances of the project
+En aquesta versió, hem revisat i millorat la funcionalitat de les proves ja existents. També, hem implementat les proves que quedaven per a fer (llums i conjunta) i completat la reactivitat del joc. D'aquesta manera, el workflow proposat inicialment (un jugador completa una prova i obre el camí de l'altre i viceversa) és totalment funcional i complet. Per tant:
+- ProvaConjunta: quan el player 2 xuta les magranes, aquestes espolsen unes llavors que el player 1 ha de portar a un test per tal d'obrir el camí.
+    - TODO: tenir un model per al test, ara mateix és una esfera que activa el trigger. I tenir una millor cinemàtica de la prova, ara és essencialment funcional.
+- ProvaLlums: manté constància de la forma a traçar per l'usuari i s'il·lumina a mesura que aquest va superant la prova i seguint el patró indicat.
+
+També ens hem dedicat a resoldre alguns bugs, randomitzar els algoritmes de certes proves com la dels bolets per tal d'obtenir una seqüència aleatòria a cada partida. El joc detecta si l'usuari no ha seguit el patró indicat i gestiona la desil·luminació dels bolets per a poder començar de nou la prova. El mateix concepte aplica a la prova de les llums.
+
+La setmana passada al lab ens vàrem adonar que l'escena tenia alguns defectes visuals:
+- Els camins eren massa grans i no es diferenciaven entre ells. En aquesta versió, els camins han estat millorats fent-los més estrets i reduint la component especular del material per tal que no enlluernin a l'usuari.
+- La llum de l'escena no afavoria la reflectivitat de l'aigua, per això hem modificat la seva direcció per emfatitzar l'aigua.
+- L'aigua no s'apreciava en tota l'escena, per això hem canviat lleugerament el seu color i propietats perquè es pugui apreciar millor.
+
+Amb tots els canvis i novetats mencionades, deixem clar que el joc ja és 100% funcional. De tal manera, que en les següents setmanes dedicarem els nostres esforços a resoldre bugs o errors que detectem en el laboratori, millorar els algorismes de les proves i implementar cinemàtica al joc que completin l'experiència d'usuari.
