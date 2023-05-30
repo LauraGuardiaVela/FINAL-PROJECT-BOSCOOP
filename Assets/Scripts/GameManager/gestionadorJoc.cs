@@ -19,6 +19,15 @@ public class gestionadorJoc : MonoBehaviour
     //Proves
     public List<GameObject> roquesProves = new List<GameObject>(); 
 
+    // Triggers
+    public List<GameObject> triggersAigua = new List<GameObject>();
+
+    // Aigua
+    public GameObject aigua;
+
+    // Illa
+    public GameObject illa;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +41,6 @@ public class gestionadorJoc : MonoBehaviour
         provaLlums = FindObjectOfType<ProvaLlums>();        
         provaBolets = FindObjectOfType<ProvaBolets>();
 
-        //HERE YOUR CODE 
         for(int i = 0; i < roquesProves.Count; i++)
         {
             if(i != 0 && i != 2){ //només volem que apareguin les 2 primeres (una de cada jugador)
@@ -63,34 +71,41 @@ public class gestionadorJoc : MonoBehaviour
     {
         obrintCamins();
         StartCoroutine(elevantRoques());
+        nivellAigua();
+
     }
     void obrintCamins()
     {
         if(provaLlums.LlumsisWin == true)
         {
-            camins[2].SetActive(true);
+            camins[2].SetActive(true); // camí 3
+            triggersAigua[7].SetActive(false); // trigger camí 3
             provaActualJugador2 = "Prova Volcans";
         }
         if(provaFlors.FlorsisWin == true)
         {
-            camins[3].SetActive(true);
+            camins[3].SetActive(true); // camí 4
+            triggersAigua[8].SetActive(false); // trigger camí 4
             provaActualJugador2 = "Prova Conjunta";
         }
 
         if(provaBolets.boletsIsWin == true)
         {
-            camins[0].SetActive(true);
+            camins[0].SetActive(true); // camí 1
+            triggersAigua[5].SetActive(false); // trigger camí 1
             provaActualJugador1 = "Prova Flors";
         }
         if(provaVolcans.volcansIsWin == true)
         {
-            camins[1].SetActive(true);
+            camins[1].SetActive(true); // camí 2
+            triggersAigua[6].SetActive(false); // trigger camí 2
             provaActualJugador1 = "Prova Conjunta";
         }
 
         if(provaConjunta.ConjuntaisWin == true)
         {
-            camins[4].SetActive(true);
+            camins[4].SetActive(true); // camí 5
+            triggersAigua[9].SetActive(false); // trigger camí 5
         }   
     }
     IEnumerator elevantRoques()
@@ -99,20 +114,28 @@ public class gestionadorJoc : MonoBehaviour
         {
             yield return new WaitForSeconds(2);
             EnableChildMeshRenderer(roquesProves[1]);
-            //roquesProves[1].SetActive(true);
+            triggersAigua[3].SetActive(false); // trigger prova flors
             
         }
         if(camins[2].activeInHierarchy)
         {
             yield return new WaitForSeconds(2);
             EnableChildMeshRenderer(roquesProves[3]);
-            //roquesProves[3].SetActive(true);
+            triggersAigua[2].SetActive(false); // trigger prova volcans
         }
         if(camins[1].activeInHierarchy && camins[3].activeInHierarchy)
         {
             yield return new WaitForSeconds(2);
             EnableChildMeshRenderer(roquesProves[4]);
-            //roquesProves[4].SetActive(true);
+            triggersAigua[4].SetActive(false); // trigger prova conjunta
+        }
+    }
+    void nivellAigua()
+    {
+        if (aigua.transform.position.y >= 5.0f)
+        {
+            //podríem posar la pantalla de que ha perdut
+            illa.transform.position = new Vector3(0, -15, 0);
         }
     }
 }

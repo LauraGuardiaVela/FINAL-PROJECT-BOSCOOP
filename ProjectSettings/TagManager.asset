@@ -8,6 +8,7 @@ TagManager:
   - BlendPlane1
   - Bolet
   - Test
+  - TriggerAigua
   layers:
   - Default
   - TransparentFX

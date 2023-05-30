@@ -27,10 +27,10 @@ public class Papallona2 : MonoBehaviour
     private ProvaConjunta provaConjunta;
     public GameObject magranaInicialObjectiu; // Anem en direcció a la primera magrana per mostrar el moviment
     private int i; //controlar que només la primera vegada vagi cap a la posició i després oscil·li
-    private float speed = 10f;
+    private float speed = 4f;
 
     // Variables moviment
-    public float movementSpeed = 100f; 
+    public float movementSpeed = 2f; 
     private Vector3 targetPos;
     private bool isMoving = false;
     private Vector3 targetPosOffset;
@@ -89,6 +89,7 @@ public class Papallona2 : MonoBehaviour
         {
             targetPos = llistaObjectiusBolets[objectiuActualBolet].transform.position + targetPosOffset;
             StartCoroutine(MoveToTarget());
+            
             objectiuActualBolet++;
         }
     }
@@ -97,6 +98,7 @@ public class Papallona2 : MonoBehaviour
         if (objectiuActualVolca < llistaObjectiusVolcans.Count && !isMoving)
         {
             targetPos = llistaObjectiusVolcans[objectiuActualVolca].transform.position + targetPosOffset;
+            StopCoroutine(MoveToTarget());
             StartCoroutine(MoveToTarget());
             objectiuActualVolca++;
         }
@@ -109,6 +111,7 @@ public class Papallona2 : MonoBehaviour
             targetPos = magranaInicialObjectiu.transform.position + targetPosOffset;
             if (!isMoving)
             {
+                StopCoroutine(MoveToTarget());
                 StartCoroutine(MoveToTarget());
             }
 
