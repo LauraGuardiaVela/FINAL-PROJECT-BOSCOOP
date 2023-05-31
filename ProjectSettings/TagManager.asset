@@ -9,6 +9,8 @@ TagManager:
   - Bolet
   - Test
   - TriggerAigua
+  - Player1Ma
+  - Player2Peu
   layers:
   - Default
   - TransparentFX
