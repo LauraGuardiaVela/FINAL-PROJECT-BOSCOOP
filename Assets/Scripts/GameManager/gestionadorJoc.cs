@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gestionadorJoc : MonoBehaviour
 {
@@ -106,7 +107,13 @@ public class gestionadorJoc : MonoBehaviour
         {
             camins[4].SetActive(true); // camí 5
             triggersAigua[9].SetActive(false); // trigger camí 5
+            StartCoroutine(Esperar());
+            SceneManager.LoadScene("JocGuanyat");
         }   
+    }
+    IEnumerator Esperar()
+    {
+        yield return new WaitForSeconds(5);
     }
     IEnumerator elevantRoques()
     {
@@ -135,7 +142,10 @@ public class gestionadorJoc : MonoBehaviour
         if (aigua.transform.position.y >= 5.0f)
         {
             //podríem posar la pantalla de que ha perdut
-            illa.transform.position = new Vector3(0, -15, 0);
+            SceneManager.LoadScene("Inundació");
+
+            //POSAR SOROLL AIGUA
+            //illa.transform.position = new Vector3(0, -15, 0);
         }
     }
 }
