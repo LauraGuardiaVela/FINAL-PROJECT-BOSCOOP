@@ -20,7 +20,6 @@ public class ProvaFlors : MonoBehaviour
     {
         iteradorFlors = 0;
         numeroFlors = llistaFlors.Count;
-        Debug.Log(numeroFlors);
         FlorsisWin = false;
         generateSequence();
         
@@ -52,23 +51,10 @@ public class ProvaFlors : MonoBehaviour
     {
         generarFlors();
         checkIfWin();
-        /*if (percentScaled < 1f) // 1
-        {
-            percentScaled += Time.deltaTime / timeToReachTarget; // 2
-            float scale = Mathf.Lerp(startScale, targetScale, percentScaled); // 3
-            //Flor.transform.localScale = new Vector3(scale, scale, scale); // 4
-            llistaFlors[0].transform.localScale = new Vector3(scale, scale, scale);
-            llistaFlors[1].transform.localScale = new Vector3(scale, scale, scale);
-            llistaFlors[2].transform.localScale = new Vector3(scale, scale, scale);
-            llistaFlors[3].transform.localScale = new Vector3(scale, scale, scale);
-            llistaFlors[4].transform.localScale = new Vector3(scale, scale, scale);
-            llistaFlors[5].transform.localScale = new Vector3(scale, scale, scale);
-        }*/
     }
 
     void generarFlors()
     {
-        Debug.Log("florsCrescudes["+iteradorFlors+"] = "+florsCrescudes[iteradorFlors]);
         if(iteradorFlors != 0)
         {
             if(florsCrescudes[iteradorFlors-1] == true)
@@ -88,6 +74,5 @@ public class ProvaFlors : MonoBehaviour
                 FlorsisWin = false;
             }
         }
-        Debug.Log("Flors Aconseguit: " + FlorsisWin);
     }
 }

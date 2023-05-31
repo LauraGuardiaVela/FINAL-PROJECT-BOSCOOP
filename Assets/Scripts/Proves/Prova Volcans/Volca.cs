@@ -40,15 +40,11 @@ public class Volca : MonoBehaviour
     
     private void Comprovar(Collider other)
     {
-        Debug.Log("provaVolcans.sequenciaVolcans["+provaVolcans.iteradorVolcans+"] = "+provaVolcans.sequenciaVolcans[provaVolcans.iteradorVolcans]);
-        Debug.Log("volca"+volca);
         if(volca.Equals(provaVolcans.sequenciaVolcans[provaVolcans.iteradorVolcans]))
         {
-            Debug.Log("inside in");
             provaVolcans.volcansTocats[provaVolcans.iteradorVolcans] = true;
             provaVolcans.llistaVolcans[provaVolcans.iteradorVolcans].SetActive(false);
-            Debug.Log("prova.volcansTocats["+provaVolcans.iteradorVolcans+"] = "+provaVolcans.volcansTocats[provaVolcans.iteradorVolcans]);
-            if(provaVolcans.iteradorVolcans <= provaVolcans.numeroVolcans - 2) //gestionar que l'iterador no sigui més gran que el número de bolets
+            if(provaVolcans.iteradorVolcans <= provaVolcans.numeroVolcans - 1) //gestionar que l'iterador no sigui més gran que el número de bolets
             {
                 provaVolcans.iteradorVolcans++; 
             }

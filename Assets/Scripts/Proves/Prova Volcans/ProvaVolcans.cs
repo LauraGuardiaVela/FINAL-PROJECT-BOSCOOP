@@ -20,7 +20,6 @@ public class ProvaVolcans : MonoBehaviour
         iteradorVolcans = 0;
         numeroVolcans = llistaVolcans.Count;
         volcansIsWin = false;
-        Debug.Log(numeroVolcans);
         generateSequence();
         
 
@@ -51,24 +50,11 @@ public class ProvaVolcans : MonoBehaviour
     {
         generarFlors();
         checkIfWin();
-        /*if (percentScaled < 1f) // 1
-        {
-            percentScaled += Time.deltaTime / timeToReachTarget; // 2
-            float scale = Mathf.Lerp(startScale, targetScale, percentScaled); // 3
-            //Flor.transform.localScale = new Vector3(scale, scale, scale); // 4
-            llistaVolcans[0].transform.localScale = new Vector3(scale, scale, scale);
-            llistaVolcans[1].transform.localScale = new Vector3(scale, scale, scale);
-            llistaVolcans[2].transform.localScale = new Vector3(scale, scale, scale);
-            llistaVolcans[3].transform.localScale = new Vector3(scale, scale, scale);
-            llistaVolcans[4].transform.localScale = new Vector3(scale, scale, scale);
-            llistaVolcans[5].transform.localScale = new Vector3(scale, scale, scale);
-        }*/
     }
 
     void generarFlors()
     {
-        Debug.Log("volcansTocats["+iteradorVolcans+"] = "+volcansTocats[iteradorVolcans]);
-        if(iteradorVolcans != 0)
+        if(iteradorVolcans != 0 && iteradorVolcans < numeroVolcans)
         {
             if(volcansTocats[iteradorVolcans-1] == true)
             {
@@ -87,6 +73,5 @@ public class ProvaVolcans : MonoBehaviour
                 volcansIsWin = false;
             }
         }
-        Debug.Log("Volcans Aconseguit: " + volcansIsWin);
     }
 }

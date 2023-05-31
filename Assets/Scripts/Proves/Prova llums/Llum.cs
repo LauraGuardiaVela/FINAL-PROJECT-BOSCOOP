@@ -26,10 +26,10 @@ public class Llum : MonoBehaviour
     void Update()
     {
         //Codi per dir quina és la seqüència dels bolets --> només per debugar
-        for(int i = 0; i < ProvaLlums.numeroBolets; i++)
-        {
-            Debug.Log(i+"="+ProvaLlums.sequenciaBolets[i]);
-        }
+        //for(int i = 0; i < ProvaLlums.numeroBolets; i++)
+        //{
+        //    Debug.Log(i+"="+ProvaLlums.sequenciaBolets[i]);
+        //}
         
     }
 
@@ -45,10 +45,8 @@ public class Llum : MonoBehaviour
 
     public void Comprovar(Collider other)
     {
-        Debug.Log("iteradorBolets: "+ProvaLlums.iteradorBolets);
         if(bolet.Equals(ProvaLlums.sequenciaBolets[ProvaLlums.iteradorBolets]))
         {
-            Debug.Log("If de nou");
             ProvaLlums.boletsTocats[ProvaLlums.iteradorBolets] = true;
             StartCoroutine(Illuminar());
 
@@ -59,7 +57,6 @@ public class Llum : MonoBehaviour
             }
         }else{
             ProvaLlums.iteradorBolets = 0;
-            Debug.Log("iteradorBolets Else: "+ProvaLlums.iteradorBolets);
             ProvaLlums.timeToReset = true;
             
         }

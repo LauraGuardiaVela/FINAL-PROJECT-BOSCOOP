@@ -131,6 +131,5 @@ public class ProvaBolets : MonoBehaviour
                 boletsIsWin = false;
             }
         }
-        Debug.Log("Bolets Aconseguit: " + boletsIsWin);
     }
 }

@@ -40,13 +40,9 @@ public class Flor : MonoBehaviour
     
     private void Comprovar(Collider other)
     {
-        Debug.Log("provaFlors.sequenciaFlors["+provaFlors.iteradorFlors+"] = "+provaFlors.sequenciaFlors[provaFlors.iteradorFlors]);
-        Debug.Log("flor"+flor);
         if(flor.Equals(provaFlors.sequenciaFlors[provaFlors.iteradorFlors]))
         {
-            Debug.Log("inside in");
             provaFlors.florsCrescudes[provaFlors.iteradorFlors] = true;
-            Debug.Log("prova.florsCrescudes["+provaFlors.iteradorFlors+"] = "+provaFlors.florsCrescudes[provaFlors.iteradorFlors]);
             if(provaFlors.iteradorFlors <= provaFlors.numeroFlors - 2) //gestionar que l'iterador no sigui més gran que el número de bolets
             {
                 provaFlors.iteradorFlors++; 

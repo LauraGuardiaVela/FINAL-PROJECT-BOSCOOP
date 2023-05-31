@@ -127,6 +127,5 @@ public class ProvaLlums : MonoBehaviour
                 LlumsisWin = false;
             }
         }
-        Debug.Log("Bolets Aconseguit: " + LlumsisWin);
     }
 }
