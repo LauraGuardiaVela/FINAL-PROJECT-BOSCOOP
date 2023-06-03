@@ -42,6 +42,11 @@ En aquesta versió, hem revisat i millorat la funcionalitat de les proves ja exi
 
 També ens hem dedicat a resoldre alguns bugs, randomitzar els algoritmes de certes proves com la dels bolets per tal d'obtenir una seqüència aleatòria a cada partida. El joc detecta si l'usuari no ha seguit el patró indicat i gestiona la desil·luminació dels bolets per a poder començar de nou la prova. El mateix concepte aplica a la prova de les llums.
 
+Per endemés, hem implementat 4 escenes més a part de la del joc principal. 
+- Escena Portada: Una escena com a portada de BosCoop amb dos botons, un per iniciar el joc i un altre per sortir del joc.   
+- Escena Introductòria: Una escena en la qual es fa una introducció als jugadors sobre BosCoop i els seus controls. Quan els jugadors es col·loquen a les seves roques respectives, l'aigua inunda l'escena i salta cap a l'escena del joc.
+- Escenes Finals: Dues escenes de cloenda del joc depenent si arriben a l'illa (guanyen) o si acaben inundant totes les roques (perden). Cada escena té un botó de sortida i un altre de tornar a l'escena de la portada. 
+
 La setmana passada al lab ens vàrem adonar que l'escena tenia alguns defectes visuals:
 - Els camins eren massa grans i no es diferenciaven entre ells. En aquesta versió, els camins han estat millorats fent-los més estrets i reduint la component especular del material per tal que no enlluernin a l'usuari.
 - La llum de l'escena no afavoria la reflectivitat de l'aigua, per això hem modificat la seva direcció per emfatitzar l'aigua.
