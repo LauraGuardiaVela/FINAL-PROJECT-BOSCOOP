@@ -45,8 +45,8 @@ public class Magrana : MonoBehaviour
         llavor2.SetActive(true);
         
         // llan�ar llavors
-        llavor1.GetComponent<Rigidbody>().velocity = new Vector3(0,1,-1) * 5;
-        llavor2.GetComponent<Rigidbody>().velocity = new Vector3(0,1,-1) * 5;
+        llavor1.GetComponent<Rigidbody>().velocity = new Vector3(0, 1, -1) * 5;
+        llavor2.GetComponent<Rigidbody>().velocity = new Vector3(0, 1, -1) * 5;
     }
 
 

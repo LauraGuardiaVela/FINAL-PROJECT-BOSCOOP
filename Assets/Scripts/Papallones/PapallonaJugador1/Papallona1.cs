@@ -31,7 +31,7 @@ public class Papallona1 : MonoBehaviour
     private float speed = 4f;
 
     // Variables moviment
-    public float movementSpeed = 2f;
+    private float movementSpeed = 5f;
     private Vector3 targetPos;
     private bool isMoving = false;
     private Vector3 targetPosOffset;
@@ -42,7 +42,7 @@ public class Papallona1 : MonoBehaviour
         gestionadorJoc = FindObjectOfType<gestionadorJoc>();
 
         // Per totes les proves igual
-        targetPosOffset = new Vector3(-3, 5, -3);
+        targetPosOffset = new Vector3(0, 5, 1);
 
         // Un init diferent per cada prova
         StartProvaLlums();
@@ -76,6 +76,7 @@ public class Papallona1 : MonoBehaviour
         }
         else if (gestionadorJoc.provaActualJugador1 == "Prova Flors" && provaLlums.LlumsisWin == true)
         {
+            movementSpeed = 10f;
             UpdateProvaFlors();
         }
         else if ((gestionadorJoc.provaActualJugador1 == "Prova Conjunta") && (gestionadorJoc.provaActualJugador2 == "Prova Conjunta"))

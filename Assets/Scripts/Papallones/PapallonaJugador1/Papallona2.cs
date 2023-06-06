@@ -27,10 +27,10 @@ public class Papallona2 : MonoBehaviour
     private ProvaConjunta provaConjunta;
     public GameObject magranaInicialObjectiu; // Anem en direcció a la primera magrana per mostrar el moviment
     private int i; //controlar que només la primera vegada vagi cap a la posició i després oscil·li
-    private float speed = 4f;
+    private float speed = 1f;
 
     // Variables moviment
-    public float movementSpeed = 2f; 
+    private float movementSpeed = 5f;
     private Vector3 targetPos;
     private bool isMoving = false;
     private Vector3 targetPosOffset;
@@ -75,6 +75,7 @@ public class Papallona2 : MonoBehaviour
         }
         else if (gestionadorJoc.provaActualJugador2 == "Prova Volcans" && provaBolets.boletsIsWin == true)
         {
+            movementSpeed = 10f;
             UpdateProvaVolcans();
         }
         else if ((gestionadorJoc.provaActualJugador2 == "Prova Conjunta") && (gestionadorJoc.provaActualJugador1 == "Prova Conjunta"))
@@ -117,7 +118,7 @@ public class Papallona2 : MonoBehaviour
 
             //papallona.transform.position = targetPos;
         }else {
-            float y = Mathf.PingPong(Time.time * speed, 1) * 6 - 3;
+            float y = Mathf.PingPong(Time.time * speed, 1) * 10 - 3;
             //papallona.transform.position = new Vector3(0, 0, 0);
             papallona.transform.position = new Vector3(papallona.transform.position.x, papallona.transform.position.y, papallona.transform.position.z + y);
         }
