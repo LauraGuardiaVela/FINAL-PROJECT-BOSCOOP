@@ -10,6 +10,8 @@ public class gestionadorJoc : MonoBehaviour
     private ProvaConjunta provaConjunta;
     private ProvaLlums provaLlums;
     private ProvaBolets provaBolets;
+    
+    public bool jocGuanyat;
 
     public string provaActualJugador1;
     public string provaActualJugador2;
@@ -48,8 +50,9 @@ public class gestionadorJoc : MonoBehaviour
                 DisableChildMeshRenderer(roquesProves[i]);
             }
         }
-
+        jocGuanyat = false;
     }
+    
     void DisableChildMeshRenderer(GameObject parent)
     {
         MeshRenderer[] meshRenderers = parent.GetComponentsInChildren<MeshRenderer>();
@@ -58,6 +61,7 @@ public class gestionadorJoc : MonoBehaviour
             renderer.enabled = false;
         }
     }
+
     void EnableChildMeshRenderer(GameObject parent)
     {
         MeshRenderer[] meshRenderers = parent.GetComponentsInChildren<MeshRenderer>();
@@ -75,6 +79,7 @@ public class gestionadorJoc : MonoBehaviour
         nivellAigua();
 
     }
+
     void obrintCamins()
     {
         if(provaLlums.LlumsisWin == true)
@@ -107,14 +112,19 @@ public class gestionadorJoc : MonoBehaviour
         {
             camins[4].SetActive(true); // camí 5
             triggersAigua[9].SetActive(false); // trigger camí 5
+        }
+        if (jocGuanyat == true)
+        {
             StartCoroutine(Esperar());
             SceneManager.LoadScene("JocGuanyat");
-        }   
+        }
     }
+
     IEnumerator Esperar()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
     }
+    
     IEnumerator elevantRoques()
     {
         if(camins[0].activeInHierarchy)
@@ -122,7 +132,6 @@ public class gestionadorJoc : MonoBehaviour
             yield return new WaitForSeconds(2);
             EnableChildMeshRenderer(roquesProves[1]);
             triggersAigua[3].SetActive(false); // trigger prova flors
-            
         }
         if(camins[2].activeInHierarchy)
         {
@@ -137,15 +146,12 @@ public class gestionadorJoc : MonoBehaviour
             triggersAigua[4].SetActive(false); // trigger prova conjunta
         }
     }
+
     void nivellAigua()
     {
         if (aigua.transform.position.y >= 5.0f)
         {
-            //podríem posar la pantalla de que ha perdut
             SceneManager.LoadScene("Inundació");
-
-            //POSAR SOROLL AIGUA
-            //illa.transform.position = new Vector3(0, -15, 0);
         }
     }
 }

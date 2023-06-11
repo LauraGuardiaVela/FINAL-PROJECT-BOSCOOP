@@ -5,14 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class InundacioToTitol : MonoBehaviour
 {
-    //public bool passarEscena;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
     // Update is called once per frame
     void Update()
     {
@@ -24,13 +16,10 @@ public class InundacioToTitol : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1Ma") || other.CompareTag("Player2Peu"))
         {   
             DeFinalATitol();
-            
         }
-        
     }
 
     public void DeFinalATitol(){

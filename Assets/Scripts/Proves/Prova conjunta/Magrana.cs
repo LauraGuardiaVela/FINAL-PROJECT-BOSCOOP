@@ -14,15 +14,9 @@ public class Magrana : MonoBehaviour
         provaConjunta = FindObjectOfType<ProvaConjunta>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player2Peu"))
         {
             Desgranar();
         }
@@ -35,7 +29,7 @@ public class Magrana : MonoBehaviour
         tweenPosition.targetPosOffset = new Vector3(0, 0, -8f);
         tweenPosition.timeToReachTarget = 2f;
 
-        // fer m�s petita
+        // fer mes petita
         TweenScale tweenScale = gameObject.AddComponent<TweenScale>();
         tweenScale.targetScale = 0;
         tweenScale.timeToReachTarget = 4f;
@@ -44,7 +38,7 @@ public class Magrana : MonoBehaviour
         llavor1.SetActive(true);
         llavor2.SetActive(true);
         
-        // llan�ar llavors
+        // llançar llavors
         llavor1.GetComponent<Rigidbody>().velocity = new Vector3(0, 1, -1) * 5;
         llavor2.GetComponent<Rigidbody>().velocity = new Vector3(0, 1, -1) * 5;
     }

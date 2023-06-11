@@ -20,7 +20,7 @@ public class TweenPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (percentMoved < 1f) // 1
+        if (percentMoved < 1f)
         {
             percentMoved += Time.deltaTime / timeToReachTarget;
             transform.position = Vector3.Lerp(startPos, targetPos, percentMoved);

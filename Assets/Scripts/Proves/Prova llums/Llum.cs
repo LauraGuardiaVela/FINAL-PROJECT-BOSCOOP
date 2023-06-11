@@ -5,13 +5,12 @@ using UnityEngine;
 public class Llum : MonoBehaviour
 {
     private ProvaLlums ProvaLlums;
-    public GameObject bolet;
+    public GameObject llum;
 
-    public AudioSource saltarBolet;
+    public AudioSource llumetes;
     
     private Color colorOriginal;
     private Color colorIlluminat;
-
 
     // Start is called before the first frame update
     void Start()
@@ -22,41 +21,29 @@ public class Llum : MonoBehaviour
         colorIlluminat = Color.cyan;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Codi per dir quina és la seqüència dels bolets --> només per debugar
-        //for(int i = 0; i < ProvaLlums.numeroBolets; i++)
-        //{
-        //    Debug.Log(i+"="+ProvaLlums.sequenciaBolets[i]);
-        //}
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1Ma"))
         {
             Comprovar(other);
-            saltarBolet.Play();
+            llumetes.Play();
         }
     }
 
 
     public void Comprovar(Collider other)
     {
-        if(bolet.Equals(ProvaLlums.sequenciaBolets[ProvaLlums.iteradorBolets]))
+        if(llum.Equals(ProvaLlums.sequenciaLlums[ProvaLlums.iteradorLlums]))
         {
-            ProvaLlums.boletsTocats[ProvaLlums.iteradorBolets] = true;
+            ProvaLlums.llumsTocades[ProvaLlums.iteradorLlums] = true;
             StartCoroutine(Illuminar());
 
-
-            if(ProvaLlums.iteradorBolets <= ProvaLlums.numeroBolets - 2) //gestionar que l'iterador no sigui més gran que el número de bolets
+            if(ProvaLlums.iteradorLlums <= ProvaLlums.numeroLlums - 2) //gestionar que l'iterador no sigui més gran que el número de llums
             {
-                ProvaLlums.iteradorBolets++; 
+                ProvaLlums.iteradorLlums++; 
             }
         }else{
-            ProvaLlums.iteradorBolets = 0;
+            ProvaLlums.iteradorLlums = 0;
             ProvaLlums.timeToReset = true;
             
         }
@@ -68,12 +55,11 @@ public class Llum : MonoBehaviour
         this.GetComponent<Renderer>().material.color = colorIlluminat;
 
         yield return new WaitForSeconds(1f);
-        //this.GetComponent<Renderer>().material.color = colorOriginal;
     }
+
     private IEnumerator DesIlluminar()
     {
         this.GetComponent<Renderer>().material.color = colorOriginal;
         yield return new WaitForSeconds(1f);
-
     }
 }

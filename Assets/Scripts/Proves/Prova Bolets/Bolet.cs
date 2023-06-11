@@ -12,7 +12,6 @@ public class Bolet : MonoBehaviour
     private Color colorOriginal;
     private Color colorIlluminat;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,22 +25,22 @@ public class Bolet : MonoBehaviour
     void Update()
     {
         //Codi per dir quina és la seqüència dels bolets --> només per debugar
-        //for(int i = 0; i < provaBolets.numeroBolets; i++)
-        //{
-        //    Debug.Log(i+"="+provaBolets.sequenciaBolets[i]);
-        //}
-        
+        /*
+        for(int i = 0; i < provaBolets.numeroBolets; i++)
+        {
+            Debug.Log(i+"="+provaBolets.sequenciaBolets[i]);
+        }
+        */        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player2Peu"))
         {
             Comprovar(other);
             saltarBolet.Play();
         }
     }
-
 
     public void Comprovar(Collider other)
     {
@@ -58,9 +57,7 @@ public class Bolet : MonoBehaviour
         }else{
             provaBolets.iteradorBolets = 0;
             provaBolets.timeToReset = true;
-            
         }
-
     }
 
     private IEnumerator Illuminar()
@@ -68,8 +65,8 @@ public class Bolet : MonoBehaviour
         this.GetComponent<Renderer>().material.color = colorIlluminat;
 
         yield return new WaitForSeconds(1f);
-        //this.GetComponent<Renderer>().material.color = colorOriginal;
     }
+
     private IEnumerator DesIlluminar()
     {
         this.GetComponent<Renderer>().material.color = colorOriginal;

@@ -1166,8 +1166,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 32.5, y: 45, z: 32}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 19.18, y: 45, z: 32}
+  m_Center: {x: -7.6, y: 0, z: 0}
 --- !u!1 &72638291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1996011721479163994, guid: c11833114d903481c90c0146e90903fb, type: 3}
@@ -2324,7 +2324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &185534726
 Transform:
   m_ObjectHideFlags: 0
@@ -3967,7 +3967,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 32.5, y: 45, z: 32}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 5.11, y: 0, z: -7.22}
 --- !u!1 &378522361
 GameObject:
   m_ObjectHideFlags: 0
@@ -5807,6 +5807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ecaaa5e29702428fa893105afc708a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jocGuanyat: 0
   provaActualJugador1: 
   provaActualJugador2: 
   camins:
@@ -6057,7 +6058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af144a228c0cc409d47d3e6bbb5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTracking: 0
+  enableTracking: 1
   numberOfPlayers: 2
   enableYAxis: 0
   players:
@@ -7273,6 +7274,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
+      propertyPath: llum
+      value: 
+      objectReference: {fileID: 72638291}
+    - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
+      propertyPath: llumetes
+      value: 
+      objectReference: {fileID: 1456700712}
+    - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
       propertyPath: saltarBolet
       value: 
       objectReference: {fileID: 1456700712}
@@ -7864,7 +7873,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 32.5, y: 45, z: 32}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -3.2, y: 0, z: 0}
 --- !u!1001 &839097571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8242,6 +8251,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
+      propertyPath: llum
+      value: 
+      objectReference: {fileID: 333907677}
+    - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
+      propertyPath: llumetes
+      value: 
+      objectReference: {fileID: 1456700712}
+    - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
       propertyPath: saltarBolet
       value: 
       objectReference: {fileID: 1456700712}
@@ -8363,7 +8380,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 32.5, y: 45, z: 32}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 3.88, y: 0, z: 0}
 --- !u!4 &939548001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1996011721479163995, guid: c11833114d903481c90c0146e90903fb, type: 3}
@@ -8713,8 +8730,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953560805}
   m_LocalRotation: {x: -0, y: -0.2590997, z: -0, w: 0.9658506}
-  m_LocalPosition: {x: -2.5, y: 0, z: 6.7}
-  m_LocalScale: {x: 1.1684768, y: 1, z: 0.46180704}
+  m_LocalPosition: {x: -5.9, y: 0, z: 5}
+  m_LocalScale: {x: 0.7, y: 1, z: 0.46180704}
   m_Children: []
   m_Father: {fileID: 1655652778}
   m_RootOrder: 1
@@ -9728,8 +9745,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 32.5, y: 45, z: 32}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 31.59, y: 45, z: 27.1}
+  m_Center: {x: -4.98, y: 0, z: -3.4}
 --- !u!1 &1073214693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2072487578589362239, guid: d382dbd077d8c4890a20d9fa351586ae, type: 3}
@@ -10655,6 +10672,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 212368ab19d8225429a208adc2442249, type: 3}
   m_PrefabInstance: {fileID: 2002315850}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1216965230
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216965229}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 30, z: 30}
+  m_Center: {x: 0, y: 7.77, z: 0}
+--- !u!114 &1216965232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216965229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea963372ba81b384f8f79b6c976373cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1228580499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12641,7 +12683,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 32.5, y: 45, z: 32}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -6.36, y: 0, z: 0}
 --- !u!1001 &1415867815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12977,7 +13019,7 @@ GameObject:
   - component: {fileID: 1440896353}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Player
+  m_TagString: Player1Ma
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13675,7 +13717,7 @@ GameObject:
   - component: {fileID: 1471923281}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Player
+  m_TagString: Player2Peu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13712,7 +13754,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a7b03a207290de447b624608f4a560b7, type: 2}
+  - {fileID: 2100000, guid: 24d9cf6262a2844c392d76ca1a2a4578, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14903,6 +14945,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
+      propertyPath: llum
+      value: 
+      objectReference: {fileID: 2000873803}
+    - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
+      propertyPath: llumetes
+      value: 
+      objectReference: {fileID: 1456700712}
     - target: {fileID: 6580670816071883225, guid: c11833114d903481c90c0146e90903fb, type: 3}
       propertyPath: saltarBolet
       value: 
@@ -16634,14 +16684,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f13e831adb6416da7bdba7a4050708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  llistaBolets:
+  llistaLlums:
   - {fileID: 333907677}
   - {fileID: 72638291}
   - {fileID: 2000873803}
-  sequenciaBolets: []
-  boletsTocats: 
-  numeroBolets: 0
-  iteradorBolets: 0
+  sequenciaLlums: []
+  llumsTocades: 
+  numeroLlums: 0
+  iteradorLlums: 0
   LlumsisWin: 0
   timeToReset: 0
 --- !u!1 &1784680748
@@ -19173,7 +19223,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 32.5, y: 45, z: 32}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -34.55}
 --- !u!1 &1997031352
 GameObject:
   m_ObjectHideFlags: 0
@@ -20464,8 +20514,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 32.5, y: 45, z: 32}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 32.5, y: 45, z: 20.4}
+  m_Center: {x: 0, y: 0, z: 3.81}
 --- !u!1001 &2074602419
 PrefabInstance:
   m_ObjectHideFlags: 0

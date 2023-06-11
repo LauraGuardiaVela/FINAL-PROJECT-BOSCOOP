@@ -9,10 +9,10 @@ public class PujarAigua : MonoBehaviour
 
     private int posYfinal;
     private float offset;
+
     // Start is called before the first frame update
     void Start()
     {
-        //yield return new WaitForSeconds(2);
         jugadorsRoques = FindObjectOfType<CheckPlayersOnRock>();
         posYfinal = -16;
         offset = 0.1f;
@@ -22,12 +22,10 @@ public class PujarAigua : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //augmentAigua();
         StartCoroutine(augmentAigua());
     }
 
     IEnumerator augmentAigua(){
-    //void augmentAigua(){    
         if(jugadorsRoques.jugadorsAlesRoques == true){
             if(posYfinal <= this.transform.position.y){
                 yield return new WaitForSeconds(3);
@@ -35,14 +33,6 @@ public class PujarAigua : MonoBehaviour
             } else {
                 this.transform.position += new Vector3(0, offset,0);
             }
-        }
-
-        /*if(posYfinal <= this.transform.position.y){
-            yield return new WaitForSeconds(3);
-            SceneManager.LoadScene("Scene");
-        } else {
-            this.transform.position += new Vector3(0, offset,0);
-        }*/
-        
+        }        
     }
 }

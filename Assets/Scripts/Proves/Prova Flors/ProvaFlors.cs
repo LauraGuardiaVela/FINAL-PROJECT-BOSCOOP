@@ -5,15 +5,13 @@ using UnityEngine;
 public class ProvaFlors : MonoBehaviour
 {
     public List<GameObject> llistaFlors = new List<GameObject>();
-    public List<GameObject> sequenciaFlors = new List<GameObject>(); //seqüència de bolets 
-    public List<bool> florsCrescudes = new List<bool>(); //llista en la que emmagatzemarem si un bolet s'ha tocat o no
+    public List<GameObject> sequenciaFlors = new List<GameObject>(); // seqüència de flors 
+    public List<bool> florsCrescudes = new List<bool>(); // llista en la que emmagatzemarem si una flor s'ha tocat o no
 
     public int numeroFlors;
     public int iteradorFlors;
 
     public bool FlorsisWin;
-
-
     
     // Start is called before the first frame update
     void Start()
@@ -21,21 +19,16 @@ public class ProvaFlors : MonoBehaviour
         iteradorFlors = 0;
         numeroFlors = llistaFlors.Count;
         FlorsisWin = false;
-        generateSequence();
-        
-
-        //per créixer la flor
-        //targetScale = 65f;
-        //startScale = transform.localScale.x;
+        generateSequence();    
     }
 
     void generateSequence()
     {
-        //ara mateix estem assumint que la seqüència és la mateixa que la llista. 
+        // la seqüència és la mateixa que la llista
         for(int i = 0; i < numeroFlors; i++)
         {
             if(i == 0){
-                llistaFlors[i].SetActive(true); //inicialitzem la primera a true
+                llistaFlors[i].SetActive(true); // inicialitzem la primera a true
             }
             else
             {

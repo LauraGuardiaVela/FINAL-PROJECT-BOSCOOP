@@ -11,12 +11,6 @@ public class Jug2ARoca : MonoBehaviour
         jug2Actiu = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         

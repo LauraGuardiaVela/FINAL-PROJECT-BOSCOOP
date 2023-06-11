@@ -10,12 +10,4 @@ public class ProvaConjunta : MonoBehaviour
     {
         ConjuntaisWin = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }

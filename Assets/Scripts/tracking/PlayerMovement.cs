@@ -84,4 +84,14 @@ public class PlayerMovement : MonoBehaviour
             aigua.transform.position = aigua.transform.position + moveUp;
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Vector3 moveUp = new Vector3(0f, 0.01f, 0f);
+
+        if (other.CompareTag("TriggerAigua"))
+        {
+            aigua.transform.position = aigua.transform.position + moveUp;
+        }
+    }
 }
